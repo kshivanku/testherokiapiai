@@ -5,23 +5,23 @@ var bodyParser = require('body-parser');
 
 //Netflix api stuff
 var actor_data, director_data;
-function getData(q){
-  request.get({
-    url: "http://netflixroulette.net/api/api.php?actor=" + q
-    // qs: {
-    //   'api-key': "96ca0bfebb174ebaa9e6fe5ae6dd3d91"
-    // },
-  }, function(err, response, body) {
-    actor_data = JSON.parse(body);
-    console.log(actor_data);
-  });
-  request.get({
-    url: "http://netflixroulette.net/api/api.php?director=" + q
-  }, function(err, response, body) {
-    director_data = JSON.parse(body);
-    console.log(director_data);
-  });
-}
+// function getData(q){
+//   request.get({
+//     url: "http://netflixroulette.net/api/api.php?actor=" + q
+//     // qs: {
+//     //   'api-key': "96ca0bfebb174ebaa9e6fe5ae6dd3d91"
+//     // },
+//   }, function(err, response, body) {
+//     actor_data = JSON.parse(body);
+//     console.log(actor_data);
+//   });
+//   request.get({
+//     url: "http://netflixroulette.net/api/api.php?director=" + q
+//   }, function(err, response, body) {
+//     director_data = JSON.parse(body);
+//     console.log(director_data);
+//   });
+// }
 //getData("Tom Hanks");
 
 const NO_INPUTS = [
@@ -44,7 +44,9 @@ restService.post('/hook', function (req, res) {
     app.tell('This is my response');
   }
 
-  function moreMovies(app){}
+  function moreMovies(app){
+    console.log("more movies function");
+  }
 
   let actionMap = new Map();
   actionMap.set('get.movies', getMovies);
