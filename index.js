@@ -52,13 +52,16 @@ restService.post('/hook', function (req, res) {
   actionMap.set('get.movies', getMovies);
   actionMap.set('more.movies', moreMovies);
   app.handleRequest(actionMap);
-}
+});
 
 // exports.movieassist = (request, response) => {}
 //
 //
 // }
 
+restService.listen((process.env.PORT || 5000), function () {
+    console.log("Server listening");
+});
 
 
 
